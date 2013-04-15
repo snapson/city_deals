@@ -10,7 +10,10 @@
 
 .active-btn, #content-veider .span8 .pagination ul > li.active > a, #content-veider .span8 .pagination ul > li.active > span, #content-veider .span8[data-class=deal] .nav-pills li.active {
   padding: 4px 10px;
+  background: -webkit-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430);
   background: -moz-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430);
+  background: -o-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430);
+  background: -ms-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430);
   background: -webkit-gradient(linear, left top, left bottom, from(#ff5e07), color-stop(0.28, #ff5e07), to(#fb3430));
   border: 1px solid #fb3430;
   -webkit-box-shadow: inset 0px 1px 4px #d02a00;
@@ -27,7 +30,10 @@
   color: white; }
 
 .grey-btn, #content-veider .span8 .pagination ul > li:not(.active) > a:hover {
+  background: -webkit-linear-gradient(top, #efefef 0%, #dbdbdb);
   background: -moz-linear-gradient(top, #efefef 0%, #dbdbdb);
+  background: -o-linear-gradient(top, #efefef 0%, #dbdbdb);
+  background: -ms-linear-gradient(top, #efefef 0%, #dbdbdb);
   background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#dbdbdb));
   border: 1px solid #e3e3e3;
   border-bottom-color: #c5c5c5; }
@@ -545,6 +551,9 @@
     overflow: hidden; }
     #content-veider .span8[data-class=deal] .social > div {
       display: inline-block; }
+    #content-veider .span8[data-class=deal] .social #vk_like {
+      position: relative;
+      top: 5px; }
   #content-veider .span8[data-class=deal] .map {
     border: 4px solid #ffcc00;
     -webkit-border-radius: 10px;

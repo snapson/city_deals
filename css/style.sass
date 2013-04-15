@@ -37,7 +37,8 @@ $prefixes: -webkit- -moz- -o- -ms-
 
 .active-btn
   padding: 4px 10px
-  background: -moz-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430)
+  @each $prefix in $prefixes
+    background: #{$prefix}linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430)
   background: -webkit-gradient(linear, left top, left bottom, from(#ff5e07), color-stop(0.28, #ff5e07), to(#fb3430))
   border: 1px solid #fb3430
   @each $prefix in $prefixes
@@ -47,7 +48,8 @@ $prefixes: -webkit- -moz- -o- -ms-
   font-size: 14px
   color: #fff
 .grey-btn
-  background: -moz-linear-gradient(top, #efefef 0%, #dbdbdb)
+  @each $prefix in $prefixes
+    background: #{$prefix}linear-gradient(top, #efefef 0%, #dbdbdb)
   background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#dbdbdb))
   border: 1px solid #e3e3e3
   border-bottom-color: #c5c5c5
@@ -510,6 +512,9 @@ $prefixes: -webkit- -moz- -o- -ms-
         overflow: hidden
         > div
           display: inline-block
+        #vk_like
+          position: relative
+          top: 5px
       .map
         border: 4px solid $yellow
         @include radius(10px)
