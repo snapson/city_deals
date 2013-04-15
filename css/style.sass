@@ -36,18 +36,21 @@ $prefixes: -webkit- -moz- -o- -ms-
 
 
 .active-btn
+  padding: 4px 10px
+  background: -moz-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430)
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff5e07), color-stop(0.28, #ff5e07), to(#fb3430))
+  border: 1px solid #fb3430
+  @each $prefix in $prefixes
+    #{$prefix}box-shadow: inset 0px 1px 4px rgba(208,42,0,1)
+  @include radius(4px)
   font-family: Arial, Helvetica, sans-serif
-  font-size: 11px
-  color: #ffffff
-  padding: 10px 20px
-  border: 1px solid #d02a00
-  background: -moz-linear-gradient(top, #ff5c0a 0%, #ff5c0a 25%, #fb3430)
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff5c0a), color-stop(0.25, #ff5c0a), to(#fb3430))
-  -moz-box-shadow: inset 0px 0px 0px rgba(255,255,255,0)
-  -webkit-box-shadow: inset 0px 0px 0px rgba(255,255,255,0)
-  box-shadow: inset 0px 0px 0px rgba(255,255,255,0)
-  text-shadow: 0px 0px 0px rgba(255,255,255,0)
-  @include radius(7px)
+  font-size: 14px
+  color: #fff
+.grey-btn
+  background: -moz-linear-gradient(top, #efefef 0%, #dbdbdb)
+  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#dbdbdb))
+  border: 1px solid #e3e3e3
+  border-bottom-color: #c5c5c5
 .sprite
   background: url(../img/main_sprite.png) 0 0 no-repeat
 .dotted-link
@@ -60,11 +63,6 @@ $prefixes: -webkit- -moz- -o- -ms-
 .clear
   clear: both
   
-
-
-body
-  //background: url(../PAGES/index.png) 0 0 no-repeat
-
 //MAIN HEADER
 #hedi-jedi
   position: relative
@@ -130,6 +128,22 @@ body
             -o-border-bottom-right-radius: 60px
             border-top-right-radius: 60px
             border-bottom-right-radius: 60px
+            border: 1px solid #dfdfdf
+            background-image: linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+            background-image: -o-linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+            background-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+            background-image: -ms-linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+            background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(0.25, #ffffff), to(#e6e8e9))
+            &:hover, &:active, &:focus
+              background: linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+              background: -webkit-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+              background: -o-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+              background: -moz-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+              background: -ms-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+              background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), color-stop(0.25, #ffffff), to(#dee0e1))
+            &:active
+              @each $prefix in $prefixes
+                #{$prefix}box-shadow: inset 0 1px 1px rgba(153,153,153,.6)
     .span3 > a
       display: block
       margin: 36px 0 0 30px
@@ -274,6 +288,7 @@ body
   .span8
     h1, h2, h3, h4, h5
       font-family: "meta_bold"
+      color: #000
     h3
       font-size: 18px
       a
@@ -282,6 +297,13 @@ body
         &:hover
           color: $red
           text-decoration: underline  
+    &[data-class=index]
+      > h3
+        margin: 0 0 20px 0
+        font-size: 21px
+        line-height: 25px
+      .advertising
+        margin: 25px 0 25px -20px
     p
       color: #333333
       &.grey
@@ -290,6 +312,9 @@ body
         font-size: 12px
         line-height: 16px
         font-weight: bold
+      &.result
+        font-size: 14px
+        font-weight: normal
       a
         color: $blue
         text-decoration: underline
@@ -297,6 +322,42 @@ body
         &:hover
           color: $red
           text-decoration: underline
+    .pagination ul
+      @include shadow(0,0,0,#fff)
+      overflow: hidden
+      > li
+        > a, > span
+          margin-right: 3px
+          padding: 4px 10px
+          border: none
+          color: $blue
+          text-decoration: underline
+          font-size: 14px
+          border: 1px solid transparent
+        &.active
+          > a, > span
+            @extend .active-btn
+            color: #fff
+            text-decoration: none
+            &:hover
+              color: #fff
+        &:not(.active) > a:hover
+          @extend .grey-btn
+          @include radius(4px)
+          color: $red
+          text-decoration: underline
+        &.disabled
+          > a, > span
+            color: #ccc
+            text-decoration: none
+            cursor: default
+            &:hover
+              background: none
+              text-decoration: none
+              color: #ccc
+              border-color: transparent
+    .m-bottom
+      margin-bottom: 30px
     .thumbnails
       .span4
         max-width: 292px
@@ -319,6 +380,8 @@ body
         padding: 0
         border: none   
         @include shadow(0,0,0,#fff)
+        h3
+          font-size: 19px
         a
           position: relative
           display: block
@@ -377,11 +440,15 @@ body
       &.popular .thumbnail
         .date
           background: #cccccc
+    .advertising
+      margin: 15px 0 15px -20px
     .breadcrumb
       padding: 0
+      margin-bottom: 10px
       background: none
       li
         color: #999
+        font-size: 12px
         a
           color: $blue
           text-decoration: underline
@@ -404,7 +471,108 @@ body
         font-family: "meta_bold_italic"
       ul li
         list-style-image: url(../img/dot.png)
-        
+    &[data-class=deal]
+      section
+        overflow: hidden
+        > img
+          margin: 0 0 30px 0
+        aside
+          max-width: 300px
+          min-width: 300px
+          margin: 0 0 28px 20px
+          padding-top: 1px
+          float: right
+          p
+            margin: -1px 0 0 0
+            padding: 12px 0
+            border-top: 1px dashed #ccc
+            border-bottom: 1px dashed #ccc
+            font-size: 15px
+            font-weight: bold
+            line-height: 33px
+            i
+              display: block
+              margin-right: 10px
+              width: 34px
+              height: 33px
+              float: left
+              background: url(../img/deal_sprite.png) 0 0 no-repeat
+            &[data-icon=sale] i
+              background-position: -37px 0
+            &.brang
+              border: none
+              line-height: 26px
+              a
+                float: right
+                font-size: 12px
+      .social
+        margin: 12px 0 15px 0
+        overflow: hidden
+        > div
+          display: inline-block
+      .map
+        border: 4px solid $yellow
+        @include radius(10px)
+        img
+          visibility: hidden
+      h3
+        font-size: 24px
+      strong
+        display: block
+        margin: 10px 0 5px 0
+      .row strong:first-child
+        margin-top: 0
+      .nav-pills
+        margin: 0
+        li
+          margin: 10px 8px 10px 0
+          padding: 4px 10px
+          a
+            padding: 0
+            float: left
+            color: $blue
+            border-bottom: 1px dashed $blue
+            @include radius(0)
+            &:hover
+              background: none
+              color: $red
+              border-color: $red
+          span
+            display: block
+            margin-top: -7px
+            float: right
+            color: #999
+            font-size: 8px
+          &.active
+            @extend .active-btn
+            a
+              color: #fff
+              border: none
+              background: none
+            span
+              display: none
+      .grey
+        margin: 0
+        padding: 10px 0
+        line-height: 16px
+        i
+          display: block
+          width: 16px
+          height: 16px
+          margin-right: 10px
+          float: left
+          background: url(../img/deal_sprite.png) 0 -37px no-repeat
+        &[data-icon=location] i
+          @extend .sprite
+          background-position: -60px -76px
+        &[data-icon=telephone] i
+          background-position: -21px -37px
+      hr.dotted
+        margin: 0
+        border: none
+        border-bottom: 1px dashed #ccc
+      .thumbnails
+        margin: 10px 0 10px -20px
 //END MAIN CONTENT
 
 
@@ -435,7 +603,7 @@ body
       @extend .dotted-link
       font-weight: bold
       border: none
-      text-decoration: underline
+      border-bottom: 1px solid #d9dbdb
       &:hover
-        text-decoration: underline
+        border: none
 //END FOOTER
