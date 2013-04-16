@@ -622,6 +622,16 @@
     border-bottom: 1px dashed #cccccc; }
   #content-veider .span8[data-class=deal] .thumbnails {
     margin: 10px 0 10px -20px; }
+  #content-veider #catalogue div[class*=span] {
+    text-align: center; }
+    #content-veider #catalogue div[class*=span] a {
+      color: #336699;
+      border-bottom: 1px dotted #336699;
+      font-size: 12px;
+      line-height: 14px; }
+      #content-veider #catalogue div[class*=span] a:hover {
+        color: #c90000;
+        border-color: #c90000; }
 
 #footi-skywalker {
   margin: 30px 0 0 -30px;
