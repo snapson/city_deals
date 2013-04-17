@@ -13,6 +13,7 @@ $yellow: #ffcc00
 $grey_text: #b2b2b2
 $red: #c90000
 $border-color: #c1d1e0
+$border-color-hover: #efb2b2
 $prefixes: -webkit- -moz- -o- -ms-
 
 
@@ -56,13 +57,6 @@ $prefixes: -webkit- -moz- -o- -ms-
   border-bottom-color: #c5c5c5
 .sprite
   background: url(../img/main_sprite.png) 0 0 no-repeat
-.dotted-link
-  color: #333333
-  border-bottom: 1px dotted #333
-  &:hover
-    color: $red
-    border-bottom: none
-    text-decoration: none
 .clear
   clear: both
   
@@ -102,7 +96,14 @@ body
           display: block
           i
             font-style: normal
-            @extend .dotted-link
+            color: #333
+            border-bottom: 1px dashed #b3b3b3
+          &:hover
+            span
+              border-top-color: #c90000
+            i
+              color: $red
+              border-color: $border-color-hover
     .span5
       form
         margin: 25px 0 0 0
@@ -112,7 +113,7 @@ body
           overflow: hidden
           @include radius(60px)
           input
-            width: 258px
+            width: 259px
             padding: 5px 10px 5px 20px
             margin: 0
             border: none
@@ -159,8 +160,8 @@ body
       > a
         display: inline-block
         margin: 36px 0 0 30px
-        @extend .dotted-link
         border-bottom: 1px solid #a5a8a8
+        color: #333
         font-family: 'meta_bold'
         font-size: 16px
         &:before
@@ -172,7 +173,8 @@ body
           @extend .sprite
           background-position: -59px -36px
         &:hover
-          border-bottom: 1px solid $red
+          color: $red
+          border-bottom: 1px solid $border-color-hover
 #cityChooseMenu
   padding: 20px
   max-height: 380px
@@ -189,7 +191,7 @@ body
       border-bottom: 1px solid $border-color
       &:hover
         background: none
-        border-color: $red
+        border-color: $border-color-hover
         color: $red
       &.disabled
         color: #cccccc
@@ -237,7 +239,7 @@ body
           &:hover
             background: none
             color: $red
-            border-color: $red
+            border-color: $border-color-hover
         span
           margin: 0 0 0 5px          
           padding: 0 3px
@@ -251,7 +253,6 @@ body
           margin: 0 0 15px -3px
           background: none
           color: #000
-          font-weight: bold
           font-size: 18px
           font-family: 'meta_bold'
           text-transform: none
@@ -288,16 +289,18 @@ body
       margin-top: 25px
       font-family: 'meta_bold'
       font-size: 19px
+      font-weight: normal
       line-height: 23px
     .brands
       margin: 10px 0 0 0
       > a
         color: $blue
         font-size: 14px
+        line-height: 24px
         border-bottom: 1px solid $border-color
         &:hover
           color: $red
-          border-color: $red
+          border-color: $border-color-hover
   .span8
     h1, h2, h3, h4, h5
       margin: 25px 0 10px 0
@@ -309,7 +312,7 @@ body
       border-bottom: 1px solid $border-color
       &:hover
         color: $red
-        border-color: $red
+        border-color: $border-color-hover
     a
       &.arrow-right:after, &.arrow-left:before
         content: "\00A0\2192"
@@ -329,17 +332,15 @@ body
         color: #999
         font-size: 12px
         line-height: 16px
-        font-weight: bold
       &.result
         font-size: 14px
         font-weight: normal
       a
         color: $blue
-        font-weight: bold
         border-bottom: 1px solid $border-color
         &:hover
           color: $red
-          border-color: $red
+          border-color: $border-color-hover
     .pagination ul
       @include shadow(0,0,0,#fff)
       overflow: hidden
@@ -370,9 +371,7 @@ body
           > a
             color: $red
             background: none
-            border-color: $red
-            &:after
-              border-color: #dfdfdf
+            border-color: $border-color-hover
         &.disabled
           > a, > span
             color: #ccc
@@ -387,6 +386,12 @@ body
               &:hover
                 color: #ccc
                 border-color: transparent
+        &.prev, &.next
+          padding: 0
+          margin: 4px 10px
+          &:hover
+            background: none
+            border-color: transparent
     .m-bottom
       margin-bottom: 30px
     .thumbnails
@@ -488,11 +493,12 @@ body
           border-bottom: 1px solid $border-color
           &:hover
             color: $red
-            border-color: $red 
+            border-color: $border-color-hover 
     &[data-class=text]
       p
         color: #333333
       figure figcaption
+        margin-top: 10px
         text-align: center
         font-style: italic
         color: #999
@@ -537,10 +543,10 @@ body
               border: none
               line-height: 26px
               a
-                padding-top: 8px
+                padding-top: 5px
                 float: right
-                font-size: 12px
-                line-height: 15px
+                font-size: 13px
+                line-height: 16px
       .social
         margin: 12px 0 15px 0
         overflow: hidden
@@ -584,7 +590,7 @@ body
             &:hover
               background: none
               color: $red
-              border-color: $red
+              border-color: $border-color-hover
           span
             display: block
             margin-top: -7px
@@ -631,7 +637,7 @@ body
         line-height: 14px
         &:hover
           color: $red
-          border-color: $red
+          border-color: $border-color-hover
   .tab-content h3:first-child
     margin-top: 10px
 //END MAIN CONTENT
@@ -665,12 +671,13 @@ body
       > a
         padding: 0
         margin: 0 10px
-        @extend .dotted-link
-        font-weight: bold
         border: none
         border-bottom: 1px solid #d9dbdb
+        font-weight: bold
+        color: #333
         font-size: 12px
         @include radius(0)
         &:hover
-          border-bottom: 1px solid $red
+          color: $red
+          border-bottom: 1px solid $border-color-hover
 //END FOOTER
