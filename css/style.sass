@@ -12,6 +12,7 @@ $blue: #336699
 $yellow: #ffcc00
 $grey_text: #b2b2b2
 $red: #c90000
+$border-color: #c1d1e0
 $prefixes: -webkit- -moz- -o- -ms-
 
 
@@ -44,7 +45,7 @@ $prefixes: -webkit- -moz- -o- -ms-
   @each $prefix in $prefixes
     #{$prefix}box-shadow: inset 0px 1px 4px rgba(208,42,0,1)
   @include radius(4px)
-  font-family: Arial, Helvetica, sans-serif
+  font-family: Arial, sans-serif
   font-size: 14px
   color: #fff
 .grey-btn
@@ -65,20 +66,25 @@ $prefixes: -webkit- -moz- -o- -ms-
 .clear
   clear: both
   
+body
+  //background: url(../PAGES/index.png) bottom center no-repeat
+  
 //MAIN HEADER
 #hedi-jedi
   position: relative
-  > a, .row
+  center a
     display: block
     width: 1000px
-    margin-left: -30px
   .row
     height: 91px
-    background: url(../img/header-bg.png) repeat-x
+    background: url(../img/header-bg.png) top center repeat-x
+    .container
+      position: relative
     .span4
+      margin-left: 10px
       .logotype
         display: block
-        margin: 19px 0 0 11px
+        margin: 19px 0 0 0
         float: left
       .dropdown
         margin: 45px 0 0 33px
@@ -99,15 +105,16 @@ $prefixes: -webkit- -moz- -o- -ms-
             @extend .dotted-link
     .span5
       form
-        margin: 25px 0 0 10px
+        margin: 25px 0 0 0
         .input-append
-          width: 100%
+          width: 372px
           border: 4px solid $yellow
           overflow: hidden
           @include radius(60px)
           input
             width: 258px
             padding: 5px 10px 5px 20px
+            margin: 0
             border: none
             -webkit-border-top-left-radius: 60px
             -webkit-border-bottom-left-radius: 60px
@@ -146,29 +153,31 @@ $prefixes: -webkit- -moz- -o- -ms-
             &:active
               @each $prefix in $prefixes
                 #{$prefix}box-shadow: inset 0 1px 1px rgba(153,153,153,.6)
-    .span3 > a
-      display: block
-      margin: 36px 0 0 30px
-      @extend .dotted-link
-      border-bottom: 0
-      text-decoration: underline
-      font-family: 'meta_bold'
-      font-size: 16px
-      &:before
-        content: ""
-        display: block
-        width: 16px
-        height: 16px
-        margin: 0 0 -17px -21px
-        @extend .sprite
-        background-position: -59px -36px
-      &:hover
-        text-decoration: underline
+    .span3 
+      width: 200px
+      margin-left: 10px
+      > a
+        display: inline-block
+        margin: 36px 0 0 30px
+        @extend .dotted-link
+        border-bottom: 1px solid #a5a8a8
+        font-family: 'meta_bold'
+        font-size: 16px
+        &:before
+          content: ""
+          display: block
+          width: 16px
+          height: 16px
+          margin: 0 0 -17px -21px
+          @extend .sprite
+          background-position: -59px -36px
+        &:hover
+          border-bottom: 1px solid $red
 #cityChooseMenu
   padding: 20px
   max-height: 380px
-  top: 170px
-  left: 50px
+  top: 77px
+  left: 94px
   border: 4px solid #dbe2e4
   li
     margin-left: 0
@@ -177,15 +186,14 @@ $prefixes: -webkit- -moz- -o- -ms-
       display: inline
       padding: 0
       color: $blue
-      font-weight: bold
-      text-decoration: underline
+      border-bottom: 1px solid $border-color
       &:hover
         background: none
-        text-decoration: underline
+        border-color: $red
         color: $red
       &.disabled
         color: #cccccc
-        text-decoration: none
+        border-color: transparent
         cursor: default
     &.close
       position: absolute
@@ -194,6 +202,7 @@ $prefixes: -webkit- -moz- -o- -ms-
       width: 13px
       height: 13px
       background: url(../img/city-close.png) no-repeat
+      opacity: 1
   &:before
     content: ""
     position: relative
@@ -221,12 +230,14 @@ $prefixes: -webkit- -moz- -o- -ms-
           display: block
           float: left
         > a
+          padding: 0
+          margin: 3px 0
           color: $blue
-          font-weight: bold
-          text-decoration: underline
+          border-bottom: 1px solid $border-color
           &:hover
             background: none
             color: $red
+            border-color: $red
         span
           margin: 0 0 0 5px          
           padding: 0 3px
@@ -282,28 +293,33 @@ $prefixes: -webkit- -moz- -o- -ms-
       margin: 10px 0 0 0
       > a
         color: $blue
-        font-weight: bold
-        text-decoration: underline
         font-size: 14px
+        border-bottom: 1px solid $border-color
         &:hover
           color: $red
+          border-color: $red
   .span8
     h1, h2, h3, h4, h5
+      margin: 25px 0 10px 0
       font-family: "meta_bold"
+      font-weight: normal
       color: #000
-    h3
-      font-size: 18px
-      a
-        color: $blue
-        text-decoration: underline
-        &:hover
-          color: $red
-          text-decoration: underline  
+    h3 a
+      color: $blue
+      border-bottom: 1px solid $border-color
+      &:hover
+        color: $red
+        border-color: $red
+    a
+      &.arrow-right:after, &.arrow-left:before
+        content: "\00A0\2192"
+        border-bottom: 1px solid #fff
+        text-decoration: none
+      &.arrow-left:before
+        content: "\2190\00A0"
     &[data-class=index]
       > h3
-        margin: 0 0 20px 0
-        font-size: 21px
-        line-height: 25px
+        margin-top: 0
       .advertising
         margin: 25px 0 25px -20px
     p
@@ -319,45 +335,58 @@ $prefixes: -webkit- -moz- -o- -ms-
         font-weight: normal
       a
         color: $blue
-        text-decoration: underline
         font-weight: bold
+        border-bottom: 1px solid $border-color
         &:hover
           color: $red
-          text-decoration: underline
+          border-color: $red
     .pagination ul
       @include shadow(0,0,0,#fff)
       overflow: hidden
       > li
+        display: inline-block
+        padding: 4px 10px
+        border: 1px solid transparent
         > a, > span
-          margin-right: 3px
-          padding: 4px 10px
-          border: none
+          padding: 0
+          margin: 1px 0
           color: $blue
-          text-decoration: underline
           font-size: 14px
-          border: 1px solid transparent
+          line-height: 16px
+          border: none
+          border-bottom: 1px solid $border-color
+          @include radius(0)
         &.active
+          @extend .active-btn
           > a, > span
-            @extend .active-btn
             color: #fff
-            text-decoration: none
+            border: none
+            background: transparent
             &:hover
               color: #fff
-        &:not(.active) > a:hover
+        &:not(.active):hover
           @extend .grey-btn
           @include radius(4px)
-          color: $red
-          text-decoration: underline
+          > a
+            color: $red
+            background: none
+            border-color: $red
+            &:after
+              border-color: #dfdfdf
         &.disabled
           > a, > span
             color: #ccc
-            text-decoration: none
+            border-color: transparent
             cursor: default
-            &:hover
-              background: none
-              text-decoration: none
+          &:hover
+            background: none
+            border-color: transparent
+            > a, > span
               color: #ccc
               border-color: transparent
+              &:hover
+                color: #ccc
+                border-color: transparent
     .m-bottom
       margin-bottom: 30px
     .thumbnails
@@ -372,7 +401,7 @@ $prefixes: -webkit- -moz- -o- -ms-
           position: relative
           display: block
           content: ""
-          top: 4px
+          top: 22px
           left: -5px
           width: 100%
           height: 20px
@@ -383,7 +412,10 @@ $prefixes: -webkit- -moz- -o- -ms-
         border: none   
         @include shadow(0,0,0,#fff)
         h3
+          margin-top: 15px
           font-size: 19px
+          a
+            display: inline
         a
           position: relative
           display: block
@@ -426,8 +458,8 @@ $prefixes: -webkit- -moz- -o- -ms-
             font-size: 15px
             font-weight: bold
         .caption
-          max-height: 173px
-          min-height: 173px
+          max-height: 155px
+          min-height: 155px
           padding: 0 16px 16px 16px
           text-overflow: ellipsis
           overflow: hidden
@@ -446,17 +478,17 @@ $prefixes: -webkit- -moz- -o- -ms-
       margin: 15px 0 15px -20px
     .breadcrumb
       padding: 0
-      margin-bottom: 10px
+      margin-bottom: -10px
       background: none
       li
         color: #999
         font-size: 12px
         a
           color: $blue
-          text-decoration: underline
+          border-bottom: 1px solid $border-color
           &:hover
             color: $red
-            text-decoration: underline 
+            border-color: $red 
     &[data-class=text]
       p
         color: #333333
@@ -505,8 +537,10 @@ $prefixes: -webkit- -moz- -o- -ms-
               border: none
               line-height: 26px
               a
+                padding-top: 8px
                 float: right
                 font-size: 12px
+                line-height: 15px
       .social
         margin: 12px 0 15px 0
         overflow: hidden
@@ -515,20 +549,29 @@ $prefixes: -webkit- -moz- -o- -ms-
         #vk_like
           position: relative
           top: 5px
-      .map
+      .map, .map-mini
         border: 4px solid $yellow
         @include radius(10px)
+        &:after
+          position: relative
+          display: block
+          content: ""
+          top: 24px
+          width: 100%
+          height: 20px
+          background: url(../img/item-bg.png) -10px 0 no-repeat
+        &:after
+          background: url(../img/item-bg-mini.png) 0 0 no-repeat
         img
           visibility: hidden
-      h3
-        font-size: 24px
       strong
         display: block
         margin: 10px 0 5px 0
+        color: #333
       .row strong:first-child
         margin-top: 0
       .nav-pills
-        margin: 0
+        margin: 10px 0 0 0
         li
           margin: 10px 8px 10px 0
           padding: 4px 10px
@@ -589,19 +632,23 @@ $prefixes: -webkit- -moz- -o- -ms-
         &:hover
           color: $red
           border-color: $red
+  .tab-content h3:first-child
+    margin-top: 10px
 //END MAIN CONTENT
 
 
 //FOOTER
 #footi-skywalker
-  margin: 30px 0 0 -30px
-  padding: 33px 30px 0 30px
+  margin: 30px 0 0 0
+  padding: 33px 0 0 0
   height: 71px
-  width: 940px
-  background: url(../img/footer-bg.png) repeat-x
+  background: url(../img/footer-bg.png) top center repeat-x
   .logo_grey
     float: left
     opacity: .5
+  .span4
+    width: 250px
+    margin-left: 10px
   .copyright
     margin: 3px 0 0 10px
     float: left
@@ -612,14 +659,18 @@ $prefixes: -webkit- -moz- -o- -ms-
     small
       display: block
       font-weight: normal
-  .nav-pills > li
-    > a
-      padding: 0
-      margin: 12px
-      @extend .dotted-link
-      font-weight: bold
-      border: none
-      border-bottom: 1px solid #d9dbdb
-      &:hover
+  .nav-pills
+    margin-left: 40px
+    > li
+      > a
+        padding: 0
+        margin: 0 10px
+        @extend .dotted-link
+        font-weight: bold
         border: none
+        border-bottom: 1px solid #d9dbdb
+        font-size: 12px
+        @include radius(0)
+        &:hover
+          border-bottom: 1px solid $red
 //END FOOTER

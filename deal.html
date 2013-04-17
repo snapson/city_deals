@@ -11,10 +11,10 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" media="all" />
 	</head>
 	<body>		
-		<div class="container">
-			<header id="hedi-jedi">
-				<a href=""><img src="img/top-bg.png" alt="" /></a>
-				<div class="row">
+		<header id="hedi-jedi">
+			<center><a href=""><img src="img/top-bg.png" alt="" /></a></center>
+			<div class="row">
+				<div class="container">
 					<div class="span4">
 						<a href="" class="logotype"><img src="img/logo_mini.png" alt="" /></a>
 						<div class="dropdown" id="cityChoose">
@@ -23,6 +23,61 @@
 								<span class="caret"></span>
 							</a>
 						</div>
+						<ul class="dropdown-menu" id="cityChooseMenu">
+							<li class="close"></li>
+							<li class="span2">
+								<a href="">Бобруйск</a><br />
+								<a href="">Борисов</a><br />
+								<a href="">Быхов</a><br />
+								<p>&nbsp;</p>
+								<a href="">Ветка</a><br />
+								<a href="">Витебск</a><br />
+								<p>&nbsp;</p>
+								<a href="">Гомель</a><br />
+								<a href="">Горки</a><br />
+								<a href="">Городок</a><br />
+								<p>&nbsp;</p>
+								<a href="">Дзержинск</a><br />
+								<a href="">Добруш</a><br />
+								<a href="">Дрисса</a><br />
+								<a href="">Дубровно</a><br />
+								<p>&nbsp;</p>
+								<a href="">Жлобин</a>				
+							</li>
+							<li class="span2">
+								<a href="">Калинковичи</a><br />
+								<a href="">Климовичи</a><br />
+								<a href="">Крючев</a><br />
+								<p>&nbsp;</p>
+								<a href="">Лепель</a><br />
+								<p>&nbsp;</p>
+								<a href="">Минск</a><br />
+								<a href="" class="disabled">Могилёв</a><br />
+								<a href="" class="disabled">Мозырь</a><br />
+								<a href="">Мстиславль</a><br />
+								<p>&nbsp;</p>
+								<a href="">Орша</a><br />
+								<a href="">Осипович</a><br />
+								<p>&nbsp;</p>
+								<a href="">Петриков</a><br />
+								<a href="">Полоцк</a>
+								
+							</li>
+							<li class="span2">
+								<a href="">Речица</a><br />
+								<a href="">Рогочёв</a><br />
+								<p>&nbsp;</p>
+								<a href="">Сенно</a><br />
+								<a href="">Слуцк</a><br />
+								<a href="">Старые Дороги</a><br />
+								<p>&nbsp;</p>
+								<a href="">Чаусы</a><br />
+								<a href="">Червень</a><br />
+								<a href="">Чериков</a><br />
+								<p>&nbsp;</p>
+								<a href="">Шклов</a>
+							</li>									
+						</ul>
 					</div>
 					<div class="span5">
 						<form action="">
@@ -36,62 +91,9 @@
 						<a href="#" id="addBusiness">Добавить ваш бизнес</a>
 					</div>
 				</div>
-				<ul class="dropdown-menu" id="cityChooseMenu">
-					<li class="close"></li>
-					<li class="span2">
-						<a href="">Бобруйск</a><br />
-						<a href="">Борисов</a><br />
-						<a href="">Быхов</a><br />
-						<p>&nbsp;</p>
-						<a href="">Ветка</a><br />
-						<a href="">Витебск</a><br />
-						<p>&nbsp;</p>
-						<a href="">Гомель</a><br />
-						<a href="">Горки</a><br />
-						<a href="">Городок</a><br />
-						<p>&nbsp;</p>
-						<a href="">Дзержинск</a><br />
-						<a href="">Добруш</a><br />
-						<a href="">Дрисса</a><br />
-						<a href="">Дубровно</a><br />
-						<p>&nbsp;</p>
-						<a href="">Жлобин</a>				
-					</li>
-					<li class="span2">
-						<a href="">Калинковичи</a><br />
-						<a href="">Климовичи</a><br />
-						<a href="">Крючев</a><br />
-						<p>&nbsp;</p>
-						<a href="">Лепель</a><br />
-						<p>&nbsp;</p>
-						<a href="">Минск</a><br />
-						<a href="" class="disabled">Могилёв</a><br />
-						<a href="" class="disabled">Мозырь</a><br />
-						<a href="">Мстиславль</a><br />
-						<p>&nbsp;</p>
-						<a href="">Орша</a><br />
-						<a href="">Осипович</a><br />
-						<p>&nbsp;</p>
-						<a href="">Петриков</a><br />
-						<a href="">Полоцк</a>
-						
-					</li>
-					<li class="span2">
-						<a href="">Речица</a><br />
-						<a href="">Рогочёв</a><br />
-						<p>&nbsp;</p>
-						<a href="">Сенно</a><br />
-						<a href="">Слуцк</a><br />
-						<a href="">Старые Дороги</a><br />
-						<p>&nbsp;</p>
-						<a href="">Чаусы</a><br />
-						<a href="">Червень</a><br />
-						<a href="">Чериков</a><br />
-						<p>&nbsp;</p>
-						<a href="">Шклов</a>
-					</li>									
-				</ul>
-			</header>
+			</div>
+		</header>
+		<div class="container">
 			<div class="row" id="content-veider">
 				<div class="span4">
 					<ul class="nav nav-list">
@@ -160,7 +162,7 @@
 							<p data-icon="sale"><i></i> Скидка 50%</p>
 							<p class="brang">
 								<img src="img/delete_for_release/brand.png" alt="" />
-								<a href="">Информация о бренде &#8594;</a>
+								<a href="" class="arrow-right">Информация о бренде</a>
 							</p>
 							<div class="social">
 								<div id="vk_like"></div>
@@ -209,34 +211,40 @@
 						<div class="span4"><img src="img/advertising_0.png" alt="" /></div>
 					</div>
 					<ul class="nav nav-pills">
-						<li><a href="">Еще акции</a></li>
-						<li class="active"><a href="">Еще акции</a></li>
-						<li><a href="">В других городах</a></li>
+						<li><a href="#more" data-toggle="pill">Еще акции</a></li>
+						<li class="active"><a href="#other" data-toggle="pill">В других городах</a></li>
 					</ul>
-					<h3>Витебск</h3>
-					<div class="row">
-						<div class="span5">
-							<strong>М.Видео в торговом центре «Твой дом»</strong>
-							<p class="grey" data-icon="location"><i></i>ул. Немига, 3</p>
-							<hr class="dotted" />
-							<p class="grey" data-icon="clock"><i></i>10:00–22:00, без перерывов и выходных</p>
-							<hr class="dotted" />
-							<p class="grey" data-icon="telephone"><i></i>+375 33 637-33-21</p>
-							<strong>М.Видео в торговом центре «Твой дом»</strong>
-							<p class="grey" data-icon="location"><i></i>ул. Немига, 3</p>
-							<hr class="dotted" />
-							<p class="grey" data-icon="clock"><i></i>10:00–22:00, без перерывов и выходных</p>
-							<hr class="dotted" />
-							<p class="grey" data-icon="telephone"><i></i>+375 33 637-33-21</p>
-						</div>
-						<div class="span3">
-							<div class="map" style="background: url(img/delete_for_release/map_mini.JPG)"><img src="img/delete_for_release/map_mini.JPG" alt="" /></div>
+					<div class="tab-content">
+						<div class="tab-pane" id="more"></div>
+						<div class="tab-pane active" id="other">
+							<h3>Витебск</h3>
+							<div class="row">
+								<div class="span5">
+									<strong>М.Видео в торговом центре «Твой дом»</strong>
+									<p class="grey" data-icon="location"><i></i>ул. Немига, 3</p>
+									<hr class="dotted" />
+									<p class="grey" data-icon="clock"><i></i>10:00–22:00, без перерывов и выходных</p>
+									<hr class="dotted" />
+									<p class="grey" data-icon="telephone"><i></i>+375 33 637-33-21</p>
+									<strong>М.Видео в торговом центре «Твой дом»</strong>
+									<p class="grey" data-icon="location"><i></i>ул. Немига, 3</p>
+									<hr class="dotted" />
+									<p class="grey" data-icon="clock"><i></i>10:00–22:00, без перерывов и выходных</p>
+									<hr class="dotted" />
+									<p class="grey" data-icon="telephone"><i></i>+375 33 637-33-21</p>
+								</div>
+								<div class="span3">
+									<div class="map-mini" style="background: url(img/delete_for_release/map_mini.JPG)"><img src="img/delete_for_release/map_mini.JPG" alt="" /></div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<footer id="footi-skywalker">
-				<div class="row">
+		</div>
+		<footer id="footi-skywalker">
+			<div class="row">
+				<div class="container">
 					<div class="span4">
 						<a href="" class="logo_grey"><img src="img/logo_grey.png" alt="" /></a>
 						<div class="copyright">
@@ -252,9 +260,9 @@
 							<li><a href="#">Контактная информация</a></li>
 						</ul>
 					</div>	
-				</div>							
-			</footer>
-		</div>
+				</div>
+			</div>							
+		</footer>
 		
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
