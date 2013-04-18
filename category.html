@@ -7,23 +7,25 @@
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
-		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" media="all" />
 	</head>
 	<body>
-		<header id="hedi-jedi">
-			<center><a href=""><img src="img/top-bg.png" alt="" /></a></center>
-			<div class="row">
+		<header id="header">
+			<div id="top-banner">
+				<a href=""><img src="img/top-bg.png" alt="" /></a>
+			</div>
+			<div class="row wave-container">
 				<div class="container">
-					<div class="span4">
+					<div class="span4 left-part">
 						<a href="" class="logotype"><img src="img/logo_mini.png" alt="" /></a>
-						<div class="dropdown" id="cityChoose">
+						<div class="dropdown" id="city-choose">
 							<a href="#" class="dropdown-toggle">
 								<i>Минск</i>
 								<span class="caret"></span>
 							</a>
 						</div>
-						<ul class="dropdown-menu" id="cityChooseMenu">
+						<ul class="dropdown-menu" id="city-choose-menu">
 							<li class="close"></li>
 							<li class="span2">
 								<a href="">Бобруйск</a><br />
@@ -79,7 +81,7 @@
 							</li>									
 						</ul>
 					</div>
-					<div class="span5">
+					<div class="span5 center-part">
 						<form action="">
 							<div class="input-append">
 								<input class="span4" type="text" name="search" placeholder="Поиск по каталогу" />
@@ -87,15 +89,15 @@
 							</div>
 						</form>
 					</div>
-					<div class="span3">
-						<a href="#" id="addBusiness">Добавить ваш бизнес</a>
+					<div class="span3 right-part">
+						<a href="#" id="add-business">Добавить ваш бизнес</a>
 					</div>
 				</div>
 			</div>
-		</header>		
-		<div class="container">
-			<div class="row" id="content-veider">
-				<div class="span4">
+		</header>
+		<div class="container" id="page">
+			<div class="row">
+				<div class="span4" id="sidebar">
 					<ul class="nav nav-list">
 						<li class="nav-header">Каталог скидок</li>
 						<li data-icon="cloth"><a href="">Одежда и обувь</a><span>+9</span></li>
@@ -111,7 +113,9 @@
 						<li data-icon="book"><a href="">Книги, музыка, кино</a></li>
 						<li data-icon="food"><a href="">Продукты питания</a></li>
 					</ul>
-					<a href=""><img src="img/advertising_2.png" alt="" /></a>
+					<div id="sidebar-advertising">
+						<a href=""><img src="img/advertising_2.png" alt="" /></a>
+					</div>
 					<h3>Новые бренды</h3>
 					<div class="brands">
 						<a href="">Спортмастер</a>,
@@ -145,7 +149,7 @@
 						<a href="">Глория</a>
 					</div>
 				</div>
-				<div class="span8">
+				<div class="span8" id="content">
 					<ul class="breadcrumb">
 						<li><a href="#">Главная</a> <span class="divider">&#8594;</span></li>
 						<li><a href="#">Автомобили</a> <span class="divider">&#8594;</span></li>
@@ -230,7 +234,7 @@
 							</div>
 						</li>
 					</ul>
-					<div class="row m-bottom">
+					<div class="row m-bottom" id="content-advertising">
 						<div class="span4"><img src="img/advertising_1.png" alt="" /></div>
 						<div class="span4"><img src="img/advertising_0.png" alt="" /></div>
 					</div>
@@ -310,50 +314,30 @@
 				</div>
 			</div>
 		</div>
-		<footer id="footi-skywalker">
+		<footer id="footer">
 			<div class="row">
 				<div class="container">
-					<div class="span4">
+					<div class="span4 left-part">
 						<a href="" class="logo_grey"><img src="img/logo_grey.png" alt="" /></a>
 						<div class="copyright">
 							&copy; 2012-2013 
 							<small>Все права защищены.</small>
 						</div>
 					</div>
-					<div class="span8">
+					<div class="span8 right-part">
 						<ul class="nav nav-pills">
 							<li><a href="#">О нас</a></li>
 							<li><a href="#">Добавить бизнес</a></li>
 							<li><a href="#">Политика безопасности</a></li>
 							<li><a href="#">Контактная информация</a></li>
 						</ul>
-					</div>	
-				</div>
+					</div>
+				</div>	
 			</div>							
 		</footer>
 		
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
 		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/script.js"></script>
-		<!-- VK LIKE -->
-		<script type="text/javascript" src="//vk.com/js/api/openapi.js?88"></script>
-		<script type="text/javascript">
-		  VK.init({apiId: 3575939, onlyWidgets: true});
-		  VK.Widgets.Like("vk_like", {type: "mini"});
-		</script>
-		<!-- VK LIKE -->
-		
-		<!-- FB LIKE -->
-		<div id="fb-root"></div>
-		<script>
-			(function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id)) return;
-				js = d.createElement(s); js.id = id;
-				js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
-		<!-- FB LIKE -->
 	</body>
 </html>

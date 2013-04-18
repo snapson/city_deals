@@ -2,22 +2,22 @@ $(function(){
 	
 	//WORK WITH DROPDOWN IN HEADER
 	$(document).click(function(){
-		$("#cityChooseMenu").hide();
+		$("#city-choose-menu").hide();
 		console.log(true);
 	});
-	$("#cityChoose").on("click", function(e){
+	$("#city-choose").on("click", function(e){
 		e.preventDefault();
 		e.stopPropagation();
 		
-		$("#cityChooseMenu").show();
+		$("#city-choose-menu").show();
 	});
-	$("#cityChooseMenu").on("click", "a", function(e){
+	$("#city-choose-menu").on("click", "a", function(e){
 		e.preventDefault();
 		e.stopPropagation();
 		
 		if(!$(this).hasClass("disabled")){
-			$("#cityChoose i").text( $(this).text() );
-			$("#cityChooseMenu").hide();
+			$("#city-choose i").text( $(this).text() );
+			$("#city-choose-menu").hide();
 		}
 	});
 	//END WORK WITH DROPDOWN IN HEADER
