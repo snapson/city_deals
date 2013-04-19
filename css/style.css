@@ -8,7 +8,7 @@
   src: url(../fonts/MetaBoldC-Italic.eot);
   src: url(../fonts/MetaBoldC-Italic.eot?iefix) format("embedded-opentype"), url(../fonts/metaboldc-italic.ttf) format("truetype"); }
 
-.active-btn, #content .pagination ul > li.active, #content[data-class=deal] .nav-pills li.active {
+.active-btn, #content .pagination ul > li.active, #content > [data-class=deal] .nav-pills li.active {
   padding: 4px 10px;
   background: -webkit-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430);
   background: -moz-linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430);
@@ -38,7 +38,7 @@
   border: 1px solid #e3e3e3;
   border-bottom-color: #c5c5c5; }
 
-.sprite, #header .wave-container .left-part .dropdown:before, #header .wave-container .right-part > a:before, #sidebar .nav-list li:before, #content .thumbnails .thumbnail .date .discount, #content[data-class=deal] .grey[data-icon=location] i {
+.sprite, #header .wave-container .left-part .dropdown:before, #header .wave-container .right-part > a:before, #sidebar .nav-list li:before, #content .thumbnails .thumbnail .date .discount, #content > [data-class=deal] .grey[data-icon=location] i {
   background: url(../img/main_sprite.png) 0 0 no-repeat; }
 
 .clear {
@@ -384,9 +384,9 @@
   text-decoration: none; }
 #content a.arrow-left:before {
   content: "\2190\00A0"; }
-#content[data-class=index] > h3 {
+#content > [data-class=index] > h3 {
   margin-top: 0; }
-#content[data-class=index] .advertising {
+#content > [data-class=index] .advertising {
   margin: 25px 0 25px -20px; }
 #content p {
   color: #333333; }
@@ -572,17 +572,17 @@
       #content .breadcrumb li a:hover {
         color: #c90000;
         border-color: #efb2b2; }
-#content[data-class=deal] section {
+#content > [data-class=deal] section {
   overflow: hidden; }
-  #content[data-class=deal] section > img {
+  #content > [data-class=deal] section > img {
     margin: 0 0 30px 0; }
-  #content[data-class=deal] section aside {
+  #content > [data-class=deal] section aside {
     max-width: 300px;
     min-width: 300px;
     margin: 0 0 28px 20px;
     padding-top: 1px;
     float: right; }
-    #content[data-class=deal] section aside p {
+    #content > [data-class=deal] section aside p {
       margin: -1px 0 0 0;
       padding: 12px 0;
       border-top: 1px dashed #cccccc;
@@ -590,39 +590,39 @@
       font-size: 15px;
       font-weight: bold;
       line-height: 33px; }
-      #content[data-class=deal] section aside p i {
+      #content > [data-class=deal] section aside p i {
         display: block;
         margin-right: 10px;
         width: 34px;
         height: 33px;
         float: left;
         background: url(../img/deal_sprite.png) 0 0 no-repeat; }
-      #content[data-class=deal] section aside p[data-icon=sale] i {
+      #content > [data-class=deal] section aside p[data-icon=sale] i {
         background-position: -37px 0; }
-      #content[data-class=deal] section aside p.brang {
+      #content > [data-class=deal] section aside p.brang {
         border: none;
         line-height: 26px; }
-        #content[data-class=deal] section aside p.brang a {
+        #content > [data-class=deal] section aside p.brang a {
           padding-top: 5px;
           float: right;
           font-size: 13px;
           line-height: 16px; }
-#content[data-class=deal] .social {
+#content > [data-class=deal] .social {
   margin: 12px 0 15px 0;
   overflow: hidden; }
-  #content[data-class=deal] .social > div {
+  #content > [data-class=deal] .social > div {
     display: inline-block; }
-  #content[data-class=deal] .social .vk_like {
+  #content > [data-class=deal] .social .vk_like {
     position: relative;
     top: 5px; }
-#content[data-class=deal] .map, #content[data-class=deal] .map-mini {
+#content > [data-class=deal] .map, #content > [data-class=deal] .map-mini {
   border: 4px solid #ffcc00;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -o-border-radius: 10px;
   -ms-border-radius: 10px;
   border-radius: 10px; }
-  #content[data-class=deal] .map:after, #content[data-class=deal] .map-mini:after {
+  #content > [data-class=deal] .map:after, #content > [data-class=deal] .map-mini:after {
     position: relative;
     display: block;
     content: "";
@@ -630,23 +630,23 @@
     width: 100%;
     height: 20px;
     background: url(../img/item-bg.png) -10px 0 no-repeat; }
-  #content[data-class=deal] .map:after, #content[data-class=deal] .map-mini:after {
+  #content > [data-class=deal] .map:after, #content > [data-class=deal] .map-mini:after {
     background: url(../img/item-bg-mini.png) 0 0 no-repeat; }
-  #content[data-class=deal] .map img, #content[data-class=deal] .map-mini img {
+  #content > [data-class=deal] .map img, #content > [data-class=deal] .map-mini img {
     visibility: hidden; }
-#content[data-class=deal] strong {
+#content > [data-class=deal] strong {
   display: block;
   margin: 10px 0 5px 0;
   color: #333333; }
-#content[data-class=deal] .info strong:first-child {
+#content > [data-class=deal] .info strong:first-child {
   margin-top: 0; }
-#content[data-class=deal] .nav-pills {
+#content > [data-class=deal] .nav-pills {
   margin: 10px 0 0 0; }
-  #content[data-class=deal] .nav-pills li {
+  #content > [data-class=deal] .nav-pills li {
     margin: 10px 8px 10px 0;
     padding: 4px 10px;
     list-style: none; }
-    #content[data-class=deal] .nav-pills li a {
+    #content > [data-class=deal] .nav-pills li a {
       padding: 0;
       float: left;
       color: #336699;
@@ -656,42 +656,42 @@
       -o-border-radius: 0;
       -ms-border-radius: 0;
       border-radius: 0; }
-      #content[data-class=deal] .nav-pills li a:hover {
+      #content > [data-class=deal] .nav-pills li a:hover {
         background: none;
         color: #c90000;
         border-color: #efb2b2; }
-    #content[data-class=deal] .nav-pills li span {
+    #content > [data-class=deal] .nav-pills li span {
       display: block;
       margin-top: -7px;
       float: right;
       color: #999999;
       font-size: 8px; }
-    #content[data-class=deal] .nav-pills li.active a {
+    #content > [data-class=deal] .nav-pills li.active a {
       color: white;
       border: none;
       background: none; }
-    #content[data-class=deal] .nav-pills li.active span {
+    #content > [data-class=deal] .nav-pills li.active span {
       display: none; }
-#content[data-class=deal] .grey {
+#content > [data-class=deal] .grey {
   margin: 0;
   padding: 10px 0;
   line-height: 16px; }
-  #content[data-class=deal] .grey i {
+  #content > [data-class=deal] .grey i {
     display: block;
     width: 16px;
     height: 16px;
     margin-right: 10px;
     float: left;
     background: url(../img/deal_sprite.png) 0 -37px no-repeat; }
-  #content[data-class=deal] .grey[data-icon=location] i {
+  #content > [data-class=deal] .grey[data-icon=location] i {
     background-position: -60px -76px; }
-  #content[data-class=deal] .grey[data-icon=telephone] i {
+  #content > [data-class=deal] .grey[data-icon=telephone] i {
     background-position: -21px -37px; }
-#content[data-class=deal] hr.dotted {
+#content > [data-class=deal] hr.dotted {
   margin: 0;
   border: none;
   border-bottom: 1px dashed #cccccc; }
-#content[data-class=deal] .thumbnails {
+#content > [data-class=deal] .thumbnails {
   margin: 10px 0 10px -20px; }
 
 #footer {
