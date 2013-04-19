@@ -1,0 +1,22 @@
+doctype 5
+html
+  head
+    meta charset="utf-8"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    title CityDeals
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+
+  body
+    = partial "shared/header"
+
+    #page.container
+      #content-veider.row
+        #sidebar.span4
+          = partial "shared/sidebar"
+        #content.span8
+          = yield
+
+    = partial "shared/footer"
+    = javascript_include_tag "application"

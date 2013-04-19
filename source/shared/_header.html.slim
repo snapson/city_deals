@@ -1,0 +1,18 @@
+header#header
+  #top-banner
+    = link_to image_tag("top-bg.png"), "#"
+  .row.wave-container
+    .container
+      .span4.left-part
+        a href="#" class="logotype"
+          = image_tag "logo_mini.png", alt: ""
+        = partial "shared/cities"
+
+      .span5.center-part
+        form action=""
+          .input-append
+            input class="span4" type="text" name="search" placeholder="Поиск по каталогу"
+            button type="submit" Найти
+
+      .span3.right-part
+        a href="#" id="add-business" Добавить ваш бизнес

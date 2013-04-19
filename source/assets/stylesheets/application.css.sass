@@ -1,0 +1,688 @@
+//= require bootstrap
+//= require_self
+
+@font-face
+  font-family: 'meta_bold'
+  src: font_url("MetaBoldC.eot")
+  src: font_url("MetaBoldC.eot?iefix") format('embedded-opentype'), font_url("metaboldc.ttf") format('truetype')
+@font-face
+  font-family: 'meta_bold_italic'
+  src: font_url("MetaBoldC-Italic.eot")
+  src: fonr_url("MetaBoldC-Italic.eot?iefix") format('embedded-opentype'), font_url("metaboldc-italic.ttf") format('truetype')
+
+
+$blue: #336699
+$yellow: #ffcc00
+$grey_text: #b2b2b2
+$red: #c90000
+$border-color: #c1d1e0
+$border-color-hover: #efb2b2
+$prefixes: -webkit- -moz- -o- -ms-
+
+
+@mixin transition($duration:0.3s)
+  @each $prefix in $prefixes
+    #{$prefix}transition: $duration
+  transition: $duration
+@mixin radius($radius:5px)
+  @each $prefix in $prefixes
+    #{$prefix}border-radius: $radius
+  border-radius: $radius
+@mixin shadow($x: 0,$y: 0,$blur: 5px,$color: #000)
+  @each $prefix in $prefixes
+    #{$prefix}box-shadow: $x $y $blur $color
+  box-shadow: $x $y $blur $color
+@mixin menu-before($margin, $top, $width, $height, $bgp)
+  margin: $margin
+  top: $top
+  width: $width
+  height: $height
+  background-position: $bgp
+
+
+.active-btn
+  padding: 4px 10px
+  @each $prefix in $prefixes
+    background: #{$prefix}linear-gradient(top, #ff5e07 0%, #ff5e07 28%, #fb3430)
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff5e07), color-stop(0.28, #ff5e07), to(#fb3430))
+  border: 1px solid #fb3430
+  @each $prefix in $prefixes
+    #{$prefix}box-shadow: inset 0px 1px 4px rgba(208,42,0,1)
+  @include radius(4px)
+  font-family: Arial, sans-serif
+  font-size: 14px
+  color: #fff
+.grey-btn
+  @each $prefix in $prefixes
+    background: #{$prefix}linear-gradient(top, #efefef 0%, #dbdbdb)
+  background: -webkit-gradient(linear, left top, left bottom, from(#efefef), to(#dbdbdb))
+  border: 1px solid #e3e3e3
+  border-bottom-color: #c5c5c5
+.sprite
+  background: image_url("main_sprite.png") 0 0 no-repeat
+.clear
+  clear: both
+
+//MAIN HEADER
+#header
+  position: relative
+  .wave-container
+    height: 91px
+    background: image_url("header-bg.png") top center repeat-x
+    .container
+      position: relative
+    .left-part
+      margin-left: 10px
+      .logotype
+        display: block
+        margin: 19px 0 0 0
+        float: left
+      .dropdown
+        margin: 45px 0 0 33px
+        float: left
+        font-size: 13px
+        &:before
+          content: ""
+          display: block
+          width: 12px
+          height: 16px
+          margin: 0 0 -17px -16px
+          @extend .sprite
+          background-position: -60px -76px
+        > a
+          display: block
+          i
+            font-style: normal
+            color: #333
+            border-bottom: 1px dashed #b3b3b3
+          &:hover
+            span
+              border-top-color: #c90000
+            i
+              color: $red
+              border-color: $border-color-hover
+    .center-part form
+      margin: 25px 0 0 0
+      .input-append
+        width: 372px
+        border: 4px solid $yellow
+        overflow: hidden
+        @include radius(60px)
+        input
+          width: 259px
+          padding: 5px 10px 5px 20px
+          margin: 0
+          border: none
+          -webkit-border-top-left-radius: 60px
+          -webkit-border-bottom-left-radius: 60px
+          -moz-border-radius-topleft: 60px
+          -moz-border-radius-bottomleft: 60px
+          -o-border-top-left-radius: 60px
+          -o-border-bottom-left-radius: 60px
+          border-top-left-radius: 60px
+          border-bottom-left-radius: 60px
+        button
+          padding: 4px 21px
+          font-weight: bold
+          font-size: 13px
+          font-family: Arial
+          -webkit-border-top-right-radius: 60px
+          -webkit-border-bottom-right-radius: 60px
+          -moz-border-radius-bottomright: 60px
+          -moz-border-radius-bottomleft: 60px
+          -o-border-top-right-radius: 60px
+          -o-border-bottom-right-radius: 60px
+          border-top-right-radius: 60px
+          border-bottom-right-radius: 60px
+          border: 1px solid #dfdfdf
+          background-image: linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+          background-image: -o-linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+          background-image: -webkit-linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+          background-image: -ms-linear-gradient(top, #ffffff 0%,#ffffff 25%,#e6e8e9)
+          background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(0.25, #ffffff), to(#e6e8e9))
+          &:hover, &:active, &:focus
+            background: linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+            background: -webkit-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+            background: -o-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+            background: -moz-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+            background: -ms-linear-gradient(top, #f5f5f5 0%, #ffffff 25%, #dee0e1)
+            background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), color-stop(0.25, #ffffff), to(#dee0e1))
+          &:active
+            @each $prefix in $prefixes
+              #{$prefix}box-shadow: inset 0 1px 1px rgba(153,153,153,.6)
+    .right-part
+      width: 200px
+      margin-left: 10px
+      > a
+        display: inline-block
+        margin: 36px 0 0 30px
+        border-bottom: 1px solid #a5a8a8
+        color: #333
+        font-family: 'meta_bold'
+        font-size: 16px
+        &:before
+          content: ""
+          display: block
+          width: 16px
+          height: 16px
+          margin: 0 0 -17px -21px
+          @extend .sprite
+          background-position: -59px -36px
+        &:hover
+          color: $red
+          border-bottom: 1px solid $border-color-hover
+#top-banner a
+  display: block
+  margin: 0 auto
+  width: 1000px
+#city-choose-menu
+  padding: 20px
+  max-height: 380px
+  top: 77px
+  left: 94px
+  border: 4px solid #dbe2e4
+  li
+    margin-left: 0
+    float: left
+    a
+      display: inline
+      padding: 0
+      color: $blue
+      border-bottom: 1px solid $border-color
+      &:hover
+        background: none
+        border-color: $border-color-hover
+        color: $red
+      &.disabled
+        color: #cccccc
+        border-color: transparent
+        cursor: default
+    &.close
+      position: absolute
+      top: 20px
+      right: 20px
+      width: 13px
+      height: 13px
+      background: image_url("city-close.png") no-repeat
+      opacity: 1
+  &:before
+    content: ""
+    position: relative
+    display: block
+    margin: 0 0 -19px -36px
+    top: -39px
+    left: 125px
+    width: 36px
+    height: 19px
+    background: image_url("city-corner.png") no-repeat
+//END MAIN HEADER
+
+//MAIN CONTENT
+#page
+  margin-top: 25px
+  .tab-content h3:first-child
+    margin-top: 10px
+#catalogue
+  .item
+    text-align: center
+    a
+      color: $blue
+      border-bottom: 1px dotted $blue
+      font-size: 12px
+      line-height: 14px
+      &:hover
+        color: $red
+        border-color: $border-color-hover
+#sidebar
+  .nav-list
+    padding: 0
+    margin-bottom: 25px
+    li
+      padding: 0 0 0 25px
+      margin: 0 0 4px 0
+      overflow: hidden
+      > a, span
+        display: block
+        float: left
+      > a
+        padding: 0
+        margin: 3px 0
+        color: $blue
+        border-bottom: 1px solid $border-color
+        &:hover
+          background: none
+          color: $red
+          border-color: $border-color-hover
+      span
+        margin: 0 0 0 5px
+        padding: 0 3px
+        background: $yellow
+        color: #fff
+        font-size: 9px
+        line-height: 14px
+        @include radius(2px)
+      &.active
+        a
+          background: none
+          color: $red
+          border-color: $border-color-hover
+      &.nav-header
+        padding: 0
+        margin: 0 0 15px -3px
+        background: none
+        color: #000
+        font-size: 18px
+        font-family: 'meta_bold'
+        text-transform: none
+      &:before
+        position: relative
+        display: block
+        content: ""
+        @extend .sprite
+      &[data-icon=cloth]:before
+        @include menu-before(0 0 -12px -25px, 6px, 16px, 12px, -39px -3px)
+      &[data-icon=leaf]:before
+        @include menu-before(0 0 -16px -25px, 5px, 14px, 16px, 0 -96px)
+      &[data-icon=chair]:before
+        @include menu-before(0 0 -16px -25px, 6px, 13px, 16px, -59px -56px)
+      &[data-icon=gym]:before
+        @include menu-before(0 0 -7px -25px, 10px, 16px, 7px, -59px -25px)
+      &[data-icon=auto]:before
+        @include menu-before(0 0 -14px -25px, 6px, 16px, 14px, -38px -21px)
+      &[data-icon=tv]:before
+        @include menu-before(0 0 -15px -25px, 5px, 16px, 15px, -19px -96px)
+      &[data-icon=phone]:before
+        @include menu-before(0 0 -16px -25px, 6px, 16px, 16px, 0 0)
+      &[data-icon=monitor]:before
+        @include menu-before(0 0 -16px -25px, 5px, 16px, 16px, -17px -20px)
+      &[data-icon=baloons]:before
+        @include menu-before(0 0 -17px -25px, 4px, 12px, 17px, -1px -20px)
+      &[data-icon=photo]:before
+        @include menu-before(0 0 -12px -25px, 7px, 17px, 12px, -58px -2px)
+      &[data-icon=book]:before
+        @include menu-before(0 0 -16px -25px, 5px, 13px, 16px, -20px 0)
+      &[data-icon=food]:before
+        @include menu-before(0 0 -14px -25px, 6px, 14px, 14px, -42px -97px)
+  h3
+    margin-top: 25px
+    font-family: 'meta_bold'
+    font-size: 19px
+    font-weight: normal
+    line-height: 23px
+  .brands
+    margin: 10px 0 0 0
+    > a
+      color: $blue
+      font-size: 14px
+      line-height: 24px
+      border-bottom: 1px solid $border-color
+      &:hover
+        color: $red
+        border-color: $border-color-hover
+#content
+  h1, h2, h3, h4, h5
+    margin: 25px 0 10px 0
+    font-family: "meta_bold"
+    font-weight: normal
+    color: #000
+  h3 a
+    color: $blue
+    border-bottom: 1px solid $border-color
+    &:hover
+      color: $red
+      border-color: $border-color-hover
+  figure figcaption
+    margin-top: 10px
+    text-align: center
+    font-style: italic
+    color: #999
+    font-size: 12px
+  blockquote
+    margin: 25px 0
+    padding-left: 60px
+    background: image_url("blockquote.png") no-repeat
+    border: none
+    font-family: "meta_bold_italic"
+  ul li
+    list-style-image: image_url("dot.png")
+  a
+    &.arrow-right:after, &.arrow-left:before
+      content: "\00A0\2192"
+      border-bottom: 1px solid #fff
+      text-decoration: none
+    &.arrow-left:before
+      content: "\2190\00A0"
+  > [data-class=index]
+    > h3
+      margin-top: 0
+    .advertising
+      margin: 25px 0 25px -20px
+  p
+    color: #333333
+    &.grey
+      margin-top: 35px
+      color: #999
+      font-size: 12px
+      line-height: 16px
+    &.result
+      font-size: 14px
+      font-weight: normal
+    a
+      color: $blue
+      border-bottom: 1px solid $border-color
+      &:hover
+        color: $red
+        border-color: $border-color-hover
+  .pagination ul
+    @include shadow(0,0,0,#fff)
+    overflow: hidden
+    > li
+      display: inline-block
+      padding: 4px 10px
+      border: 1px solid transparent
+      > a, > span
+        padding: 0
+        margin: 1px 0
+        color: $blue
+        font-size: 14px
+        line-height: 16px
+        border: none
+        border-bottom: 1px solid $border-color
+        @include radius(0)
+      &.active
+        @extend .active-btn
+        > a, > span
+          color: #fff
+          border: none
+          background: transparent
+          &:hover
+            color: #fff
+      &:not(.active):hover
+        @extend .grey-btn
+        @include radius(4px)
+        > a
+          color: $red
+          background: none
+          border-color: $border-color-hover
+      &.disabled
+        > a, > span
+          color: #ccc
+          border-color: transparent
+          cursor: default
+        &:hover
+          background: none
+          border-color: transparent
+          > a, > span
+            color: #ccc
+            border-color: transparent
+            &:hover
+              color: #ccc
+              border-color: transparent
+      &.prev, &.next
+        padding: 0
+        margin: 4px 10px
+        &:hover
+          background: none
+          border-color: transparent
+  .m-bottom
+    margin-bottom: 30px
+  .thumbnails
+    li
+      max-width: 292px
+      min-width: 292px
+      max-height: 396px
+      min-height: 396px
+      border: 4px solid #dbe2e4
+      @include radius(10px)
+      list-style: none
+      &:after
+        position: relative
+        display: block
+        content: ""
+        top: 22px
+        left: -5px
+        width: 100%
+        height: 20px
+        background: image_url("item-bg.png") -10px 0 no-repeat
+    .thumbnail
+      position: relative
+      padding: 0
+      border: none
+      @include shadow(0,0,0,#fff)
+      h3
+        margin-top: 15px
+        font-size: 19px
+        line-height: 27px
+        a
+          display: inline
+      a
+        position: relative
+        display: block
+        -webkit-border-top-right-radius: 6px
+        -webkit-border-top-left-radius: 6px
+        -moz-border-radius-topright: 6px
+        -moz-border-radius-topleft: 6px
+        -o-border-top-right-radius: 6px
+        -o-border-top-left-radius: 6px
+        border-top-right-radius: 6px
+        border-top-left-radius: 6px
+        zoom: 1
+        vertical-align: top
+        img
+          display: block
+          height: 181px
+          width: 292px
+          visibility: hidden
+      .date
+        position: relative
+        width: 100%
+        margin-left: -4px
+        padding: 3px 3px 3px 4px
+        background: $yellow
+        color: #fff
+        font-size: 12px
+        i
+          margin: 0 5px 0 12px
+        .discount
+          position: absolute
+          top: -13px
+          right: 16px
+          padding-top: 16px
+          width: 51px
+          height: 35px
+          @extend .sprite
+          background-position: 0 -40px
+          text-align: center
+          color: #fff
+          font-size: 15px
+          font-weight: bold
+      .caption
+        max-height: 155px
+        min-height: 155px
+        padding: 0 16px 16px 16px
+        text-overflow: ellipsis
+        overflow: hidden
+        -webkit-border-bottom-right-radius: 6px
+        -webkit-border-bottom-left-radius: 6px
+        -moz-border-radius-bottomright: 6px
+        -moz-border-radius-bottomleft: 6px
+        -o-border-bottom-right-radius: 6px
+        -o-border-bottom-left-radius: 6px
+        border-bottom-right-radius: 6px
+        border-bottom-left-radius: 6px
+    &.popular .thumbnail
+      .date
+        background: #cccccc
+  .advertising
+    margin: 15px 0 15px -20px
+  .breadcrumb
+    padding: 0
+    margin-bottom: -10px
+    background: none
+    li
+      color: #999
+      font-size: 12px
+      a
+        color: $blue
+        border-bottom: 1px solid $border-color
+        &:hover
+          color: $red
+          border-color: $border-color-hover
+  > [data-class=deal]
+    section
+      overflow: hidden
+      > img
+        margin: 0 0 30px 0
+      aside
+        max-width: 300px
+        min-width: 300px
+        margin: 0 0 28px 20px
+        padding-top: 1px
+        float: right
+        p
+          margin: -1px 0 0 0
+          padding: 12px 0
+          border-top: 1px dashed #ccc
+          border-bottom: 1px dashed #ccc
+          font-size: 15px
+          font-weight: bold
+          line-height: 33px
+          i
+            display: block
+            margin-right: 10px
+            width: 34px
+            height: 33px
+            float: left
+            background: image_url("deal_sprite.png") 0 0 no-repeat
+          &[data-icon=sale] i
+            background-position: -37px 0
+          &.brang
+            border: none
+            line-height: 26px
+            a
+              padding-top: 5px
+              float: right
+              font-size: 13px
+              line-height: 16px
+    .social
+      margin: 12px 0 15px 0
+      overflow: hidden
+      > div
+        display: inline-block
+      .vk_like
+        position: relative
+        top: 5px
+    .map, .map-mini
+      border: 4px solid $yellow
+      @include radius(10px)
+      &:after
+        position: relative
+        display: block
+        content: ""
+        top: 24px
+        width: 100%
+        height: 20px
+        background: image_url("item-bg.png") -10px 0 no-repeat
+      &:after
+        background: image_url("item-bg-mini.png") 0 0 no-repeat
+      img
+        visibility: hidden
+    strong
+      display: block
+      margin: 10px 0 5px 0
+      color: #333
+    .info strong:first-child
+      margin-top: 0
+    .nav-pills
+      margin: 10px 0 0 0
+      li
+        margin: 10px 8px 10px 0
+        padding: 4px 10px
+        list-style: none
+        a
+          padding: 0
+          float: left
+          color: $blue
+          border-bottom: 1px dashed $blue
+          @include radius(0)
+          &:hover
+            background: none
+            color: $red
+            border-color: $border-color-hover
+        span
+          display: block
+          margin-top: -7px
+          float: right
+          color: #999
+          font-size: 8px
+        &.active
+          @extend .active-btn
+          a
+            color: #fff
+            border: none
+            background: none
+          span
+            display: none
+    .grey
+      margin: 0
+      padding: 10px 0
+      line-height: 16px
+      i
+        display: block
+        width: 16px
+        height: 16px
+        margin-right: 10px
+        float: left
+        background: image_url("deal_sprite.png") 0 -37px no-repeat
+      &[data-icon=location] i
+        @extend .sprite
+        background-position: -60px -76px
+      &[data-icon=telephone] i
+        background-position: -21px -37px
+    hr.dotted
+      margin: 0
+      border: none
+      border-bottom: 1px dashed #ccc
+    .thumbnails
+      margin: 10px 0 10px -20px
+//END MAIN CONTENT
+
+
+//FOOTER
+#footer
+  margin: 30px 0 0 0
+  padding: 33px 0 0 0
+  height: 71px
+  background: image_url("footer-bg.png") top center repeat-x
+  .logo_grey
+    float: left
+    opacity: .5
+  .left-part
+    width: 250px
+    margin-left: 10px
+  .copyright
+    margin: 3px 0 0 10px
+    float: left
+    color: $grey_text
+    font-weight: bold
+    line-height: 16px
+    font-size: 13px
+    small
+      display: block
+      font-weight: normal
+  .nav-pills
+    margin-left: 40px
+    > li
+      > a
+        padding: 0
+        margin: 0 10px
+        border: none
+        border-bottom: 1px solid #d9dbdb
+        font-weight: bold
+        color: #333
+        font-size: 12px
+        @include radius(0)
+        &:hover
+          color: $red
+          border-bottom: 1px solid $border-color-hover
+//END FOOTER
