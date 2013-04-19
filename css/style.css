@@ -248,6 +248,10 @@
       -o-border-radius: 2px;
       -ms-border-radius: 2px;
       border-radius: 2px; }
+    #sidebar .nav-list li.active a {
+      background: none;
+      color: #c90000;
+      border-color: #efb2b2; }
     #sidebar .nav-list li.nav-header {
       padding: 0;
       margin: 0 0 15px -3px;

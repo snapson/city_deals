@@ -258,6 +258,11 @@ $prefixes: -webkit- -moz- -o- -ms-
         font-size: 9px
         line-height: 14px
         @include radius(2px)
+      &.active
+        a
+          background: none
+          color: $red
+          border-color: $border-color-hover
       &.nav-header
         padding: 0
         margin: 0 0 15px -3px
