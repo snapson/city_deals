@@ -11,32 +11,14 @@ ul.nav.nav-list
 
 h3 Новые бренды
 .brands
-  <a href="">Спортмастер</a>,
-  <a href="">Икеа(Ikea)</a>,
-  <a href="">Ив Роше</a>,
-  <a href="">Техносила</a>,
-  <a href="">Эльдорадо</a>,
-  <a href="">Связной</a>,
-  <a href="">ТЦ Мега</a>,
-  <a href="">Снежная Королева</a>,
-  <a href="">Adidas</a>,
-  <a href="">Лексус(Lexus)</a>,
-  <a href="">Терволина</a>,
-  <a href="">Глория</a>
+  - data.brands.recent.each_with_index do |brand, idx|
+    = link_to brand, "#"
+    = ", " if idx < data.brands.recent.count - 1
 
 h3 Популярные бренды
 .brands
-  <a href="">Спортмастер</a>,
-  <a href="">Икеа(Ikea)</a>,
-  <a href="">Ив Роше</a>,
-  <a href="">Техносила</a>,
-  <a href="">Эльдорадо</a>,
-  <a href="">Связной</a>,
-  <a href="">ТЦ Мега</a>,
-  <a href="">Снежная Королева</a>,
-  <a href="">Adidas</a>,
-  <a href="">Лексус(Lexus)</a>,
-  <a href="">Терволина</a>,
-  <a href="">Глория</a>
+  - data.brands.popular.each_with_index do |brand, idx|
+    = link_to brand, "#"
+    = ", " if idx < data.brands.recent.count - 1
 
 
