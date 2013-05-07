@@ -59,12 +59,12 @@ helpers do
   def asset_path(kind, source)
     return source if source.to_s.include?('//')
     asset_folder  = case kind
-                      when :css    then css_dir
-                      when :js     then js_dir
-                      when :images then images_dir
-                      when :fonts  then fonts_dir
-                      else kind.to_s
-                    end
+      when :css    then css_dir
+      when :js     then js_dir
+      when :images then images_dir
+      when :fonts  then fonts_dir
+      else kind.to_s
+    end
     source = source.to_s.tr(' ', '')
     ignore_extension = [:images, :fonts].include?(kind) # don't append extension
     source << ".#{kind}" unless ignore_extension || source.end_with?(".#{kind}")
