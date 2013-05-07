@@ -178,11 +178,12 @@ $prefixes: -webkit- -moz- -o- -ms-
 #city-choose-menu
   padding: 20px
   max-height: 380px
+  min-width: 105px
   top: 77px
   left: 94px
   border: 4px solid #dbe2e4
   li
-    margin-left: 0
+    margin-left: 55px
     float: left
     a
       display: inline
@@ -199,12 +200,17 @@ $prefixes: -webkit- -moz- -o- -ms-
         cursor: default
     &.close
       position: absolute
+      margin-left: 0
       top: 20px
       right: 20px
       width: 13px
       height: 13px
       background: image_url("city-close.png") no-repeat
       opacity: 1
+    &:nth-child(2) ///because li.close in the first-child
+      margin-left: 0
+    &:last-child
+      padding-right: 16px
   &:before
     content: ""
     position: relative
@@ -266,6 +272,7 @@ $prefixes: -webkit- -moz- -o- -ms-
           background: none
           color: $red
           border-color: $border-color-hover
+          text-shadow: 0 -1px 0 rgba(201, 0, 0, 0.2)
       &.nav-header
         padding: 0
         margin: 0 0 15px -3px
@@ -310,8 +317,10 @@ $prefixes: -webkit- -moz- -o- -ms-
     font-weight: normal
     line-height: 23px
   .brands
-    margin: 10px 0 0 0
+    margin: 10px 0 0 -3px
     > a
+      display: inline-block
+      margin-left: 3px
       color: $blue
       font-size: 14px
       line-height: 24px
