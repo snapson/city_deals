@@ -1,17 +1,10 @@
 ul.nav.nav-list
   li.nav-header Каталог скидок
-  <li data-icon="cloth"><a href="">Одежда и обувь</a><span>+9</span></li>
-  <li data-icon="leaf"><a href="">Косметика и парфюмерия</a></li>
-  <li data-icon="chair"><a href="">Мебель и интерьер</a></li>
-  <li data-icon="gym"><a href="">Спортивные товары</a></li>
-  <li data-icon="auto"><a href="">Автомобили</a></li>
-  <li data-icon="tv"><a href="">Бытовая техника, электроника</a><span>+99</span></li>
-  <li data-icon="phone"><a href="">Телефоны и аксессуары</a></li>
-  <li data-icon="monitor"><a href="">Компьютеры и оргтехника</a></li>
-  <li data-icon="baloons"><a href="">Товары для детей</a></li>
-  <li data-icon="photo"><a href="">Фото и видео</a><span>+999</span></li>
-  <li data-icon="book"><a href="">Книги, музыка, кино</a></li>
-  <li data-icon="food"><a href="">Продукты питания</a></li>
+  - data.categories.each do |category|
+    li data-icon=category.icon
+      a href="#" = category.title
+      - if category.badge
+        span = "+#{category.badge}"
 
 #sidebar-advertising
   = link_to image_tag("advertising_2.png"), "#"

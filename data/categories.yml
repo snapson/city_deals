@@ -1,0 +1,39 @@
+-
+  icon: cloth
+  title: Одежда и обувь
+  badge: 9
+-
+  icon: leaf
+  title: Косметика и парфюмерия
+-
+  icon: chair
+  title: Мебель и интерьер
+-
+  icon: gym
+  title: Спортивные товары
+-
+  icon: auto
+  title: Автомобили
+-
+  icon: tv
+  title: Бытовая техника, электроника
+  badge: 99
+-
+  icon: phone
+  title: Телефоны и аксессуары
+-
+  icon: monitor
+  title: Компьютеры и оргтехника
+-
+  icon: baloons
+  title: Товары для детей
+-
+  icon: photo
+  title: Фото и видео
+  badge: 999
+-
+  icon: book
+  title: Книги, музыка, кино
+-
+  icon: food
+  title: Продукты питания
